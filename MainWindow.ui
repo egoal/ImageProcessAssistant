@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>991</width>
+    <height>657</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>991</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionFit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <widget class="QMenu" name="menuHue">
+     <property name="title">
+      <string>Hue</string>
+     </property>
+     <addaction name="actionMakeGray"/>
+    </widget>
+    <widget class="QMenu" name="menuGray">
+     <property name="title">
+      <string>Gray</string>
+     </property>
+     <addaction name="actionMakeBinary"/>
+     <addaction name="actionInverse"/>
+     <addaction name="separator"/>
+     <addaction name="actionFindContours"/>
+    </widget>
+    <addaction name="actionReset"/>
+    <addaction name="separator"/>
+    <addaction name="actionSize"/>
+    <addaction name="separator"/>
+    <addaction name="menuHue"/>
+    <addaction name="menuGray"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuView"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionFit">
+   <property name="text">
+    <string>Fit</string>
+   </property>
+  </action>
+  <action name="actionReset">
+   <property name="text">
+    <string>Reset</string>
+   </property>
+  </action>
+  <action name="actionMakeGray">
+   <property name="text">
+    <string>MakeGray</string>
+   </property>
+  </action>
+  <action name="actionMakeBinary">
+   <property name="text">
+    <string>MakeBinary</string>
+   </property>
+  </action>
+  <action name="actionSize">
+   <property name="text">
+    <string>Size</string>
+   </property>
+  </action>
+  <action name="actionInverse">
+   <property name="text">
+    <string>Inverse</string>
+   </property>
+  </action>
+  <action name="actionFindContours">
+   <property name="text">
+    <string>FindContours</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
