@@ -6,7 +6,7 @@
 #include <iostream>
 #include "SliderInput.h"
 #include <vector>
-#include "D:/Notes&Code/opencv_func.hpp"
+#include "opencv_func.hpp"
 #include "ContoursDisplayer.h"
 
 using namespace cv;

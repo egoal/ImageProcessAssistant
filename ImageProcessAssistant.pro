@@ -10,11 +10,11 @@ LIBS    +=  opencv_world310.lib
 SOURCES += \
     main.cpp \
     MainWindow.cpp \
-    ../../Notes&Code/opencv_func.cpp \
     MacroData.cpp \
     ImageUtility.cpp \
     SliderInput.cpp \
-    ContoursDisplayer.cpp
+    ContoursDisplayer.cpp \
+    opencv_func.cpp
 
 FORMS += \
     MainWindow.ui \
@@ -22,9 +22,9 @@ FORMS += \
 
 HEADERS += \
     MainWindow.h \
-    ../../Notes&Code/opencv_func.hpp \
     MacroData.h \
     ImageUtility.h \
     SliderInput.h \
-    ContoursDisplayer.h
+    ContoursDisplayer.h \
+    opencv_func.hpp
 
