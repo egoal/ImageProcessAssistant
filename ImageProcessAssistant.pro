@@ -14,7 +14,8 @@ SOURCES += \
     ImageUtility.cpp \
     SliderInput.cpp \
     ContoursDisplayer.cpp \
-    opencv_func.cpp
+    opencv_func.cpp \
+    SliderWidget.cpp
 
 FORMS += \
     MainWindow.ui \
@@ -26,5 +27,6 @@ HEADERS += \
     ImageUtility.h \
     SliderInput.h \
     ContoursDisplayer.h \
-    opencv_func.hpp
+    opencv_func.hpp \
+    SliderWidget.h
 

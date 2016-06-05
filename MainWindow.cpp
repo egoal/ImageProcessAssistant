@@ -53,6 +53,7 @@ void MainWindow::on_actionOpen_triggered()
     GD::getInstance()->updateToFile();
 
     imgFileName =   openFile.toStdString();
+    GD::getInstance()->currentFileName  =   imgFileName;
     srcImg  =   imread(imgFileName);
     if(!srcImg.data){
         QMessageBox::warning(this,tr("warnning"),tr("cannot open file %1").arg(openFile));
