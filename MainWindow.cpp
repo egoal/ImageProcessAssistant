@@ -8,6 +8,10 @@
 #include <vector>
 #include "opencv_func.hpp"
 #include "ContoursDisplayer.h"
+#include <iostream>
+#include "SpriteSettingWidget.h"
+#include "MorMatInputDialog.h"
+#include "SizeInputDialog.h"
 
 using namespace cv;
 using namespace std;
@@ -64,6 +68,8 @@ void MainWindow::on_actionOpen_triggered()
     displayImage(currentImg);
 
     checkMenuWithCurrentImage();
+
+    setWindowTitle(tr("MainWindow | ")+openFile);
 }
 
 void MainWindow::on_actionSave_triggered()
@@ -140,7 +146,14 @@ void MainWindow::on_actionReset_triggered()
 // size
 void MainWindow::on_actionSize_triggered()
 {
-
+    SizeInputDialog sid;
+    sid.setImageSize(currentImg.cols, currentImg.rows);
+    int re  =   sid.exec();
+    Size newSize;
+    if(re==QDialog::Accepted && sid.getImageSize(newSize)){
+        cv::resize(currentImg, currentImg, newSize);
+    }
+    displayImage(currentImg);
 }
 
 // hue
@@ -169,6 +182,8 @@ void MainWindow::on_actionMakeBinary_triggered()
     }
 
     displayImage(currentImg);
+
+    delete si;
 }
 
 
@@ -194,3 +209,64 @@ void MainWindow::on_actionFindContours_triggered()
 }
 
 
+
+void MainWindow::on_actionErode_triggered()
+{
+    Mat cache;
+    MorMatInputDialog mmid;
+    connect(&mmid, &MorMatInputDialog::mormat_changed,[&](cv::Mat& mormat){
+        morphologyEx(currentImg ,cache ,MORPH_ERODE, mormat);
+        displayImage(cache);
+    });
+
+    int re  =   mmid.exec();
+    if(re==QDialog::Accepted){
+        // morphologyEx(currentImg ,cache ,MORPH_ERODE, mormat);
+        currentImg  =   cache;
+    }
+
+    displayImage(currentImg);
+}
+
+void MainWindow::on_actionDilate_triggered()
+{
+    Mat cache;
+    MorMatInputDialog mmid;
+    connect(&mmid, &MorMatInputDialog::mormat_changed,[&](cv::Mat& mormat){
+        morphologyEx(currentImg ,cache ,MORPH_DILATE, mormat);
+        displayImage(cache);
+    });
+
+    int re  =   mmid.exec();
+    if(re==QDialog::Accepted){
+        // morphologyEx(currentImg ,cache ,MORPH_DILATE, mormat);
+        currentImg  =   cache;
+    }
+
+    displayImage(currentImg);
+}
+
+Mat MainWindow::inputMorphologyElement(){
+    bool ok;
+    QStringList types;
+    types<<"rectangle"<<"round";
+    QString strel   =   QInputDialog::getItem(this, tr("select strel mask type"), tr("shape: "),
+                                              types, 0,false, &ok);
+
+    if(!ok)
+        return Mat();
+
+    Mat re;
+    // cout<<strel.toStdString()<<endl;
+
+    return re;
+}
+
+
+void MainWindow::on_actionSpriteSettings_triggered()
+{
+    if(!spriteSetting)
+        spriteSetting   =   new SpriteSettingWidget;
+
+    spriteSetting->show();
+}

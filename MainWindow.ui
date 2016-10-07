@@ -54,6 +54,8 @@
      <addaction name="actionInverse"/>
      <addaction name="separator"/>
      <addaction name="actionFindContours"/>
+     <addaction name="actionErode"/>
+     <addaction name="actionDilate"/>
     </widget>
     <addaction name="actionReset"/>
     <addaction name="separator"/>
@@ -62,9 +64,16 @@
     <addaction name="menuHue"/>
     <addaction name="menuGray"/>
    </widget>
+   <widget class="QMenu" name="menuTool">
+    <property name="title">
+     <string>Tool</string>
+    </property>
+    <addaction name="actionSpriteSettings"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuView"/>
+   <addaction name="menuTool"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionOpen">
@@ -110,6 +119,21 @@
   <action name="actionSave">
    <property name="text">
     <string>Save</string>
+   </property>
+  </action>
+  <action name="actionErode">
+   <property name="text">
+    <string>Erode</string>
+   </property>
+  </action>
+  <action name="actionDilate">
+   <property name="text">
+    <string>Dilate</string>
+   </property>
+  </action>
+  <action name="actionSpriteSettings">
+   <property name="text">
+    <string>SpriteSettings</string>
    </property>
   </action>
  </widget>

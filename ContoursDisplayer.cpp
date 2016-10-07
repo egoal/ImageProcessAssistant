@@ -141,7 +141,7 @@ void ContoursDisplayer::on_pushButton_clicked()
 
     ofstream fout(GD::getInstance()->contourResultFile,ios::out|ios::app);
     fout<<"======"
-       <<"\nData: "<<asctime(timeinfo)
+       <<"\nDate: "<<asctime(timeinfo)
        <<"\nFile: "<<GD::getInstance()->currentFileName
        <<"\nArea: "<<valAreaLow<<" - "<<valAreaHigh
       <<"\nLength: "<<valLengthLow<<" - "<<valLengthHigh

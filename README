@@ -1,2 +1,12 @@
 This is a project created at 20160602
 
+A light software for image processing. Including: 
+cvtColor, 
+threshold, 
+resize, 
+findContours, 
+erode, dalite, 
+...
+
+almost all core functions are from opencv, version opencv3.1
+

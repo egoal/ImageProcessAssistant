@@ -15,11 +15,17 @@ SOURCES += \
     SliderInput.cpp \
     ContoursDisplayer.cpp \
     opencv_func.cpp \
-    SliderWidget.cpp
+    SliderWidget.cpp \
+    SpriteSettingWidget.cpp \
+    MorMatInputDialog.cpp \
+    SizeInputDialog.cpp
 
 FORMS += \
     MainWindow.ui \
-    ContoursDisplayer.ui
+    ContoursDisplayer.ui \
+    SpriteSettingWidget.ui \
+    MorMatInputDialog.ui \
+    SizeInputDialog.ui
 
 HEADERS += \
     MainWindow.h \
@@ -28,5 +34,8 @@ HEADERS += \
     SliderInput.h \
     ContoursDisplayer.h \
     opencv_func.hpp \
-    SliderWidget.h
+    SliderWidget.h \
+    SpriteSettingWidget.h \
+    MorMatInputDialog.h \
+    SizeInputDialog.h
 

@@ -9,6 +9,7 @@ class MainWindow;
 }
 
 class ContoursDisplayer;
+class SpriteSettingWidget;
 
 class MainWindow : public QMainWindow
 {
@@ -41,9 +42,16 @@ private slots:
 
     void on_actionSave_triggered();
 
+    void on_actionErode_triggered();
+
+    void on_actionDilate_triggered();
+
+    void on_actionSpriteSettings_triggered();
+
 private:
     Ui::MainWindow *ui;
     ContoursDisplayer* contoursDisplayer{nullptr};
+    SpriteSettingWidget* spriteSetting{nullptr};
 
     cv::Mat srcImg;
     cv::Mat currentImg;
@@ -56,6 +64,8 @@ private:
     void displayImage(const cv::Mat& img);
 
     void checkMenuWithCurrentImage();
+
+    cv::Mat inputMorphologyElement();
 };
 
 #endif // MAINWINDOW_H
